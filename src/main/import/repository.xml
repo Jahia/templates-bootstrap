@@ -6,7 +6,9 @@
                            j:moduleType="templatesSet"
                            j:title="Jahia Bootstrap Templates"
                            jcr:primaryType="jnt:module">
-                
+                <portlets jcr:primaryType="jnt:portletFolder"/>
+                <files jcr:primaryType="jnt:folder"/>
+                <contents jcr:primaryType="jnt:contentFolder"/>
             <templates jcr:primaryType="jnt:templatesFolder">
                 <files jcr:primaryType="jnt:folder"/>
                 <contents jcr:primaryType="jnt:contentFolder"/>
@@ -14,7 +16,7 @@
                     <home jcr:primaryType="jnt:pageTemplate"/>
                     <simple jcr:primaryType="jnt:pageTemplate"/>
                         <pagecontent jcr:primaryType="jnt:contentList">
-                            <bootstrapcontainer fluid="false" jcr:primaryType="jnt:bootstrapContainer"/>
+                            <bootstrap-container fluid="false" jcr:primaryType="jnt:bootstrapContainer"/>
                         </pagecontent>
                 </base>
                     <content-template j:applyOn="jnt:content"
@@ -27,9 +29,7 @@
                     </pagecontent>
                 </content-template>
             </templates>
-                <portlets jcr:primaryType="jnt:portletFolder"/>
-                <files jcr:primaryType="jnt:folder"/>
-                <contents jcr:primaryType="jnt:contentFolder"/>
+                
                 <home j:isHomePage="true"
                j:templateName="home"
                jcr:primaryType="jnt:page">
