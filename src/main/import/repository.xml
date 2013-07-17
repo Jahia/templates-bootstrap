@@ -18,8 +18,9 @@
                                         <bootstrap-column-1 jcr:primaryType="jnt:contentList">
                                             <login-form j:displayLoginButton="false"
                                           j:displayRememberMeButton="true"
+                                          j:skin="skins.bootstrap.well-small"
                                           j:view="bootstrap"
-                                          jcr:mixinTypes="jmix:renderable"
+                                          jcr:mixinTypes="jmix:renderable jmix:skinnable"
                                           jcr:primaryType="jnt:loginForm"/>
                                     </bootstrap-column-1>
                                     </bootstrap-column-1>
