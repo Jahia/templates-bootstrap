@@ -11,10 +11,25 @@
                 <files jcr:primaryType="jnt:folder"/>
                 <contents jcr:primaryType="jnt:contentFolder"/>
                 <base j:view="bootstrap" jcr:primaryType="jnt:template">
-                    <home jcr:primaryType="jnt:pageTemplate"/>
-                    <simple jcr:primaryType="jnt:pageTemplate"/>
+                        <home jcr:primaryType="jnt:pageTemplate">
+                            <bootstrap-container jcr:primaryType="jnt:contentList">
+                                <bootstrap-row fluid="false" jcr:primaryType="jnt:bootstrapRow">
+                                    <bootstrap-column-1 jcr:primaryType="jnt:bootstrapColumn" offset="6" span="6">
+                                        <bootstrap-column-1 jcr:primaryType="jnt:contentList">
+                                            <login-form j:displayLoginButton="false"
+                                          j:displayRememberMeButton="true"
+                                          j:view="bootstrap"
+                                          jcr:mixinTypes="jmix:renderable"
+                                          jcr:primaryType="jnt:loginForm"/>
+                                    </bootstrap-column-1>
+                                    </bootstrap-column-1>
+                                    <bootstrap-column jcr:primaryType="jnt:bootstrapColumn" offset="0" span="12"/>
+                                </bootstrap-row>
+                            </bootstrap-container>
+                        </home>
+                        <simple jcr:primaryType="jnt:pageTemplate"/>
                     <pagecontent jcr:primaryType="jnt:contentList">
-                        <home inverse="true"
+                            <home inverse="false"
                               j:maxDepth="2"
                               j:menuItemView="menuElement"
                               j:startLevel="0"
@@ -26,13 +41,13 @@
                                               jcr:primaryType="jnt:translation"
                                               jcr:title="Home"/>
                         </home>
-                            <bootstrap-container fluid="false" jcr:primaryType="jnt:bootstrapContainer"/>
                         <bootstrapbreadcrumb displayCurrentPage="true"
                                              displayHome="true"
-                                             displayLinkOnCurrentPage="true"
+                                       displayLinkOnCurrentPage="true"
                                              displayOnFirstLevel="false"
-                                             divider="-&gt;"
+                                       divider="-&gt;"
                                              jcr:primaryType="jnt:bootstrapBreadcrumb"/>
+                            <bootstrap-container fluid="false" jcr:primaryType="jnt:bootstrapContainer"/>
                     </pagecontent>
                 </base>
                 <content-template j:applyOn="jnt:content"
