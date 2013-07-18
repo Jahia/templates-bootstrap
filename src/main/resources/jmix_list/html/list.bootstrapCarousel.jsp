@@ -54,38 +54,46 @@
     <c:otherwise>
         <c:set var="divID" value="myCarousel${fn:replace(currentNode.identifier,'-', '')}"/>
         <c:if test="${jcr:isNodeType(currentNode, 'jmix:bootstrapCarouselInterval')}">
-        <script type='text/javascript'>
-            $(document).ready(function() {
-                $('#${divID}').carousel({
-                    interval: ${currentNode.properties.interval.long}
-                })
+            <script type='text/javascript'>
+                $(document).ready(function () {
+                    $('#${divID}').carousel({
+                        interval: ${currentNode.properties.interval.long}
+                    })
 
-            });
-        </script>
+                });
+            </script>
         </c:if>
-        <div id="${divID}" class="carousel slide" <c:if test="${jcr:isNodeType(currentNode, 'jmix:bootstrapCarouselInterval')}"> data-interval="${currentNode.properties.interval.long}" data-pause="hover"</c:if>>
+        <div id="${divID}" class="carousel slide" <c:if
+                test="${jcr:isNodeType(currentNode, 'jmix:bootstrapCarouselInterval')}"> data-interval="${currentNode.properties.interval.long}" data-pause="hover"</c:if>>
             <ol class="carousel-indicators">
-                <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="status">
-                    <li data-target="#${divID}" data-slide-to="${status.index}"<c:if test="${status.first}"> class="active"</c:if>></li>
+                <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}"
+                           end="${moduleMap.end}" varStatus="status">
+                    <li data-target="#${divID}" data-slide-to="${status.index}"<c:if
+                            test="${status.first}"> class="active"</c:if>></li>
                 </c:forEach>
             </ol>
             <div class="carousel-inner">
-                <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}" varStatus="status">
-                    <div class="item <c:if test="${status.first}"> active"</c:if>">
-                    <template:module node="${subchild}" view="${moduleMap.subNodesView}" editable="${moduleMap.editable && !resourceReadOnly}"/>
-                    <c:set var="isEmpty" value="false"/>
-                    </div>
-                </c:forEach>
+                <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}"
+                           end="${moduleMap.end}" varStatus="status">
+                <div class="item <c:if test="${status.first}"> active"
+                </c:if>">
+                <template:module node="${subchild}" view="${moduleMap.subNodesView}"
+                                 editable="${moduleMap.editable && !resourceReadOnly}"/>
+                <c:set var="isEmpty" value="false"/>
             </div>
-            <c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
-                ${moduleMap.emptyListMessage}
-            </c:if>
-            <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
-                <template:module path="*"/>
-            </c:if>
+            </c:forEach>
+        </div>
+        <c:if test="${not empty moduleMap.emptyListMessage and (renderContext.editMode or moduleMap.forceEmptyListMessageDisplay) and isEmpty}">
+            ${moduleMap.emptyListMessage}
+        </c:if>
+        <c:if test="${moduleMap.editable and renderContext.editMode && !resourceReadOnly}">
+            <template:module path="*"/>
+        </c:if>
+        <c:if test="${functions:length(moduleMap.currentList) gt 1}">
             <!-- Carousel nav -->
             <a class="carousel-control left" href="#${divID}" data-slide="prev">&lsaquo;</a>
             <a class="carousel-control right" href="#${divID}" data-slide="next">&rsaquo;</a>
+        </c:if>
         </div>
         <template:include view="hidden.footer"/>
     </c:otherwise>
