@@ -94,7 +94,7 @@
                 <configuration>
                     <instructions>
                         <Jahia-Module-Type>templatesSet</Jahia-Module-Type>
-                        <Jahia-Depends>bootstrap,bootstrap-components,default</Jahia-Depends> 
+                        <Jahia-Depends>bootstrap,bootstrap-components,default,news</Jahia-Depends>
                     </instructions>
                 </configuration>
             </plugin>
