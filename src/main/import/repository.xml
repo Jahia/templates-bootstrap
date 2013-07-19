@@ -7,7 +7,7 @@
                              j:title="Jahia Bootstrap Templates"
                              jcr:primaryType="jnt:module">
 
-            <templates jcr:primaryType="jnt:templatesFolder">
+                <templates j:defaultView="bootstrap" jcr:primaryType="jnt:templatesFolder">
                 <files jcr:primaryType="jnt:folder"/>
                 <contents jcr:primaryType="jnt:contentFolder"/>
                 <base j:view="bootstrap" jcr:primaryType="jnt:template">

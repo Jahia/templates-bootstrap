@@ -17,6 +17,6 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <bootstrap:addCSS/>
-<div class="hero-unit">
+<div class="lead">
     ${currentNode.properties.text.string}
 </div>
