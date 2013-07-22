@@ -25,17 +25,42 @@
 <c:if test="${functions:length(moduleMap.currentList) lt columns}">
     <c:set var="columns" value="${functions:length(moduleMap.currentList)}"/>
 </c:if>
-<div class="row">
-    <c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}"
-               varStatus="status">
-        <div class="span${functions:round(functions:floor((bootstrapColumnSize*1.0)/(columns*1.0)))}">
+
+
+<c:set var="columnSize" value="${functions:round(functions:floor((bootstrapColumnSize*1.0)/(columns*1.0)))}"/>
+<c:set var="addOneToCenterColumn" value="0"/>
+<%-- If number of columns in the row is not fully divided by the numbers of columns in this view we add one to the center columns--%>
+<c:if test="${(bootstrapColumnSize*1.0)/(columns*1.0) gt columnSize}">
+    <c:set var="addOneToCenterColumn" value="1"/>
+</c:if>
+
+<c:forEach items="${moduleMap.currentList}" var="subchild" begin="${moduleMap.begin}" end="${moduleMap.end}"
+           varStatus="status">
+    <c:choose>
+        <c:when test="${(status.index mod columns) eq 0 or (status.index mod columns) eq (columns-1)}">
+            <c:set var="currentColumnSize" value="${columnSize}"/>
+        </c:when>
+        <c:otherwise>
+            <c:set var="currentColumnSize" value="${columnSize + addOneToCenterColumn}"/>
+        </c:otherwise>
+    </c:choose>
+    <c:if test="${(status.index mod columns) eq 0 }">
+        <div class="row">
+    </c:if>
+    <div class="span${currentColumnSize}">
             <template:module node="${subchild}" view="${moduleMap.subNodesView}" editable="${moduleMap.editable}"/>
-        </div>
-    </c:forEach>
-    <c:if test="${moduleMap.editable and renderContext.editMode}">
-        <div class="span${functions:round(functions:floor((bootstrapColumnSize*1.0)/(columns*1.0)))}">
-            <template:module path="*"/>
+    </div>
+    <c:if test="${(status.index mod columns) eq (columns-1) or status.last}">
         </div>
     </c:if>
-</div>
+</c:forEach>
+
+<c:if test="${moduleMap.editable and renderContext.editMode}">
+    <div class="row">
+        <div class="span${bootstrapColumnSize}">
+            <template:module path="*"/>
+        </div>
+    </div>
+</c:if>
+
 <template:include view="hidden.footer"/>
