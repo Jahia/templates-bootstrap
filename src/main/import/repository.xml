@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <templates-bootstrap j:dependencies="bootstrap bootstrap-components default event search"
+        <templates-bootstrap j:dependencies="bootstrap bootstrap-components contact default event search"
                              j:installedModules="templates-bootstrap"
                              j:moduleType="templatesSet"
                              j:title="Jahia Bootstrap Templates"
                              jcr:primaryType="jnt:module">
-
+                
                 <templates j:defaultView="bootstrap" jcr:primaryType="jnt:templatesFolder">
                 <files jcr:primaryType="jnt:folder"/>
                 <contents jcr:primaryType="jnt:contentFolder"/>
@@ -90,9 +90,9 @@
                     </pagecontent>
                 </content-template>
             </templates>
-            <portlets jcr:primaryType="jnt:portletFolder"/>
-            <files jcr:primaryType="jnt:folder"/>
-            <contents jcr:primaryType="jnt:contentFolder"/>
+                <portlets jcr:primaryType="jnt:portletFolder"/>
+                <files jcr:primaryType="jnt:folder"/>
+                <contents jcr:primaryType="jnt:contentFolder"/>
             <home j:isHomePage="true"
                   j:templateName="home"
                   jcr:primaryType="jnt:page">
