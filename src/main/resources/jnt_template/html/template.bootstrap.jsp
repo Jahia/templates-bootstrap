@@ -5,6 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="jcr" uri="http://www.jahia.org/tags/jcr" %>
+<%@ taglib prefix="bootstrap" uri="http://www.jahia.org/tags/bootstrapLib" %>
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 <%--@elvariable id="out" type="java.io.PrintWriter"--%>
 <%--@elvariable id="script" type="org.jahia.services.render.scripting.Script"--%>
@@ -19,9 +20,9 @@
 
     <title>${fn:escapeXml(renderContext.mainResource.node.displayableName)}</title>
 </head>
-
 <body>
-
+<template:addResources type="javascript" resources="jquery.min.js" />
+<bootstrap:addThemeJS/>
 <template:area path="pagecontent"/>
 
 <c:if test="${renderContext.editMode}">
