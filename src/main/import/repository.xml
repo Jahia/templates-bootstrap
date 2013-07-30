@@ -20,33 +20,7 @@
                     </home>
                     <simple jcr:primaryType="jnt:pageTemplate"/>
                     <pagecontent jcr:primaryType="jnt:contentList">
-                            <bootstrap-container fluid="false" jcr:primaryType="jnt:bootstrapContainer">
-                                <bootstrap-container jcr:primaryType="jnt:contentList">
-                        <bootstrap-row fluid="false" jcr:primaryType="jnt:bootstrapRow">
-                                <bootstrap-column jcr:primaryType="jnt:bootstrapColumn" offset="0" span="12">
-                                <bootstrap-column jcr:primaryType="jnt:contentList">
-                                    <home inverse="false"
-                                          j:maxDepth="2"
-                                          j:menuItemView="menuElement"
-                                          j:startLevel="0"
-                                          jcr:primaryType="jnt:bootstrapNavMenu"
-                                          option="navbar-static-top"
-                                       responsive="false">
-                                        <j:translation_en jcr:language="en"
-                                                          jcr:mixinTypes="mix:title"
-                                                          jcr:primaryType="jnt:translation"
-                                                          jcr:title="Home"/>
-                                    </home>
-                                </bootstrap-column>
-                            </bootstrap-column>
-                                <bootstrap-column-1 jcr:primaryType="jnt:bootstrapColumn" offset="0" span="12">
-                                    <bootstrap-column-1 jcr:primaryType="jnt:contentList">
-                                        <bootstrap-container fluid="false" jcr:primaryType="jnt:bootstrapContainer"/>
-                                </bootstrap-column-1>
-                                </bootstrap-column-1>
-                        </bootstrap-row>
-                            </bootstrap-container>
-                            </bootstrap-container>
+                            <bootstrap-container fluid="false" jcr:primaryType="jnt:bootstrapContainer"/>
                     </pagecontent>
                     <single-news j:applyOn="jnt:news"
                                  j:defaultTemplate="true"
@@ -59,8 +33,8 @@
                                           jcr:primaryType="jnt:translation"
                                           jcr:title="single-news"/>
                         <bootstrap-container jcr:primaryType="jnt:contentList">
-                            <bootstrap-row fluid="true" jcr:primaryType="jnt:bootstrapRow">
-                                    <bootstrap-column-1 jcr:primaryType="jnt:bootstrapColumn" offset="2" span="7">
+                                <bootstrap-row fluid="false" jcr:primaryType="jnt:bootstrapRow">
+                                    <bootstrap-column jcr:primaryType="jnt:bootstrapColumn" offset="2" span="8">
                                     <bootstrap-column-1 jcr:primaryType="jnt:contentList">
                                         <bootstrap-breadcrumb displayCurrentPage="true"
                                                               displayHome="true"
@@ -69,14 +43,16 @@
                                                               divider="/"
                                                               jcr:primaryType="jnt:bootstrapBreadcrumb"/>
                                     </bootstrap-column-1>
-                                </bootstrap-column-1>
+                                    </bootstrap-column>
+                                </bootstrap-row>
+                                <bootstrap-row-1 fluid="false" jcr:primaryType="jnt:bootstrapRow">
                                 <bootstrap-column jcr:primaryType="jnt:bootstrapColumn" offset="0" span="12">
                                     <bootstrap-column jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="bootstrap"
                                                                jcr:primaryType="jnt:mainResourceDisplay"/>
                                     </bootstrap-column>
                                 </bootstrap-column>
-                            </bootstrap-row>
+                                </bootstrap-row-1>
                         </bootstrap-container>
                     </single-news>
                 </base>
