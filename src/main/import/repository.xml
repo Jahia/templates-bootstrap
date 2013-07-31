@@ -28,8 +28,9 @@
                                                 j:startLevel="0"
                                                 jcr:primaryType="jnt:bootstrapNavMenu"/>
                                 <bootstrapmenusimplesearchform jcr:primaryType="jnt:bootstrapMenuSimpleSearchForm"
-                                                    position="right"
+                                                    position="left"
                                                     result="/modules/templates-bootstrap/search-results"/>
+                                <bootstrapmenuloginform jcr:primaryType="jnt:bootstrapMenuLoginForm" position="right"/>
                             </home>
                             <bootstrap-container fluid="false" jcr:primaryType="jnt:bootstrapContainer"/>
                     </pagecontent>
