@@ -21,6 +21,7 @@
                         option="navbar-static-top"
                         responsive="false">
                                 <j:translation_en jcr:language="en"
+                                       jcr:mixinTypes="mix:title"
                                        jcr:primaryType="jnt:translation"
                                        jcr:title="Home"/>
                                 <bootstrap-navigation-menu j:maxDepth="2"
@@ -32,7 +33,7 @@
                                                     result="/modules/templates-bootstrap/search-results"/>
                                 <bootstrapmenuloginform jcr:primaryType="jnt:bootstrapMenuLoginForm" position="right"/>
                             </home>
-                            <bootstrap-container fluid="false" jcr:primaryType="jnt:bootstrapContainer"/>
+                            <pagecontent j:allowedTypes="" jcr:primaryType="jnt:area"/>
                     </pagecontent>
                     <single-news j:applyOn="jnt:news"
                                  j:defaultTemplate="true"
@@ -44,7 +45,9 @@
                                           jcr:mixinTypes="mix:title"
                                           jcr:primaryType="jnt:translation"
                                           jcr:title="single-news"/>
-                        <bootstrap-container jcr:primaryType="jnt:contentList">
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <bootstrap-container fluid="false" jcr:primaryType="jnt:bootstrapContainer">
+                                    <bootstrap-container jcr:primaryType="jnt:contentList">
                                 <bootstrap-row fluid="false" jcr:primaryType="jnt:bootstrapRow">
                                     <bootstrap-column jcr:primaryType="jnt:bootstrapColumn" offset="2" span="8">
                                         <bootstrap-column jcr:primaryType="jnt:contentList">
@@ -57,15 +60,17 @@
                                     </bootstrap-column>
                                     </bootstrap-column>
                                 </bootstrap-row>
-                                <bootstrap-row-1 fluid="false" jcr:primaryType="jnt:bootstrapRow">
-                                    <bootstrap-column jcr:primaryType="jnt:bootstrapColumn" offset="0" span="12">
-                                        <bootstrap-column jcr:primaryType="jnt:contentList">
-                                            <main-resource-display j:mainResourceView="bootstrap"
-                                                     jcr:primaryType="jnt:mainResourceDisplay"/>
-                                    </bootstrap-column>
-                                    </bootstrap-column>
-                                </bootstrap-row-1>
-                        </bootstrap-container>
+                                        <bootstrap-row-1 fluid="false" jcr:primaryType="jnt:bootstrapRow">
+                                            <bootstrap-column jcr:primaryType="jnt:bootstrapColumn" offset="0" span="12">
+                                                <bootstrap-column jcr:primaryType="jnt:contentList">
+                                                    <main-resource-display j:mainResourceView="bootstrap"
+                                                           jcr:primaryType="jnt:mainResourceDisplay"/>
+                                                </bootstrap-column>
+                                            </bootstrap-column>
+                                        </bootstrap-row-1>
+                                </bootstrap-container>
+                                </bootstrap-container>
+                            </pagecontent>
                     </single-news>
                 </base>
                 <content-template j:applyOn="jnt:content"
@@ -79,6 +84,7 @@
                 </content-template>
             </templates>
                 
+                
             <home j:isHomePage="true"
                   j:templateName="home"
                   jcr:primaryType="jnt:page">
@@ -88,9 +94,9 @@
                                   jcr:title="Home"/>
                     <bootstrap-column jcr:primaryType="jnt:contentList"/>
             </home>
-
                 <search-results j:templateName="simple" jcr:primaryType="jnt:page">
                     <j:translation_en jcr:language="en"
+                              jcr:mixinTypes="mix:title"
                               jcr:primaryType="jnt:translation"
                               jcr:title="Search results"/>
                 </search-results>
