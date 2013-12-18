@@ -84,6 +84,13 @@
                 
                 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder">
+                    <bootstrap jcr:primaryType="jnt:folder">
+                        <css jcr:primaryType="jnt:folder">
+                            <bootstrap.css jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                            </bootstrap.css>
+                        </css>
+                    </bootstrap>
                     <less jcr:primaryType="jnt:folder">
                         <accordion.less jcr:primaryType="jnt:file">
                             <jcr:content jcr:mimeType="application/binary" jcr:primaryType="jnt:resource"/>
