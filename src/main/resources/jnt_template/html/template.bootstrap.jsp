@@ -13,17 +13,68 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<html>
+
+<html lang="${renderContext.mainResourceLocale.language}">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
 
     <title>${fn:escapeXml(renderContext.mainResource.node.displayableName)}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%-- Modernizr --%>
+    <template:addResources type="javascript" resources="modernizr.js"/>
+
+    <%-- google-code-prettify --%>
+    <template:addResources type="css" resources="prettify.css"/>
+    <template:addResources type="javascript" resources="prettify.js,lang-css.js,"/>
+
+    <%-- HTML5 shim, for IE6-8 support of HTML5 elements --%>
+    <template:addResources type="javascript" resources="html5shiv.js" condition="if lt IE 9"/>
+
+
+    <%-- Fav and touch icons --%>
+    <link rel="shortcut icon" href="<c:url value='${url.currentModule}/icon/favicon.ico'/>" type="image/x-icon">
+    <link rel="icon" href="<c:url value='${url.currentModule}/icon/favicon.ico'/>" type="image/ico">
+    <link rel="icon" type="image/png" href="<c:url value='${url.currentModule}/icon/favicon.png'/>"/>
+
+    <link rel="apple-touch-icon" href="<c:url value='${url.currentModule}/icon/icon-iphone.png'/>"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="<c:url value='${url.currentModule}/icon/icon-ipad.png'/>"/>
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="<c:url value='${url.currentModule}/icon/jahia-icon-iphone4.png'/>"/>
+
+
+    <%--tablet and iphone meta--%>
+    <meta name='HandheldFriendly' content='True'/>
+    <meta name="viewport"
+          content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <%-- Google fonts--%>
+    <c:set var="s" value="${renderContext.request.scheme=='https'?'s':''}"/>
+    <link href='http${s}://fonts.googleapis.com/css?family=Scada' rel='stylesheet' type='text/css'>
+
+    <template:addResources type="javascript" resources="jquery.min.js"/>
+
+    <%-- Les styles--%>
+    <template:addResources type="css" resources="jahia.css"/>
+
 </head>
 <body>
 <template:addResources type="javascript" resources="jquery.min.js" />
 <bootstrap:addThemeJS/>
-<template:area path="pagecontent"/>
 
+<template:area path="header"/>
+
+<div class="wrapper">
+    <template:area path="pagecontent"/>
+</div>
+
+<div class="copyright">
+    <template:area path="footer"/>
+</div>
 <c:if test="${renderContext.editMode}">
     <template:addResources type="css" resources="edit.css" />
 </c:if>
