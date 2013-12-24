@@ -68,11 +68,12 @@
 
 <div class="wrapper">
     <template:area path="pagecontent"/>
+    <div class="copyright">
+        <template:area path="footer"/>
+    </div>
 </div>
 
-<div class="copyright">
-    <template:area path="footer"/>
-</div>
+
 <c:if test="${renderContext.editMode}">
     <template:addResources type="css" resources="edit.css" />
 </c:if>
