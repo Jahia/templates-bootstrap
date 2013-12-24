@@ -70,7 +70,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   margin: 0 auto;
   width: 1200px;
-  padding: 20px 0 10px 0 ;
+  padding: 20px 0 0 0 ;
   min-width: 320px;
   margin-top: 84px;
 }
@@ -102,6 +102,7 @@
   font-weight: 300;
   padding: 15px 0;
   font-size: 12px;
+  margin-top: 20px;
 }
 .copyright p {
   margin: 0;
