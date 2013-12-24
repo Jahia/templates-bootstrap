@@ -56,8 +56,6 @@
     <c:set var="s" value="${renderContext.request.scheme=='https'?'s':''}"/>
     <link href='http${s}://fonts.googleapis.com/css?family=Scada' rel='stylesheet' type='text/css'>
 
-    <template:addResources type="javascript" resources="jquery.min.js"/>
-
     <%-- Les styles--%>
     <template:addResources type="css" resources="jahia.css"/>
 
