@@ -20,6 +20,7 @@
     <title>${fn:escapeXml(renderContext.mainResource.node.displayableName)}</title>
 </head>
 <body>
+<bootstrap:addCSS/>
 <template:addResources type="javascript" resources="jquery.min.js" />
 <bootstrap:addThemeJS/>
 <template:area path="pagecontent"/>
